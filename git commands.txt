@@ -1,0 +1,113 @@
+1. git config --global user.name "sudheeraskm"
+
+2. git config --global user.email sudheeraskm@gmail.com
+
+3. git init
+
+4. git clone https://github.com/sudheeraskm/project_git --->to get a copy of the remote repository to the local repository.
+
+5. git remote add origin https://github.com/sudheeraskm/project_git
+
+   git remote add upstream (url)other account which you forked
+
+6. git add file_name
+
+7. git status
+
+8. git commit -m "(committed msg)" file_name
+
+9. git push -u origin master  ----> local repo to remote repo
+
+10. git diff text.txt      ---> diff b/w working dir and staging area
+
+working dir ---> Staging area ---> local repo ---> remote repo
+	git add .	git commit -m 		git push -u origin main
+						git pull
+
+11. git restore --staged text.txt   ----> if we want to undo staging
+
+12. git log  ---> will get all commit information
+
+13. rm -rf  names.txt
+
+14. vi .gitignore
+
+15. git branch
+
+16. git branch v1
+
+17. git checkout v1
+
+18. git merge v1 
+
+19. git branch -d v1   ---> delete branch v1
+
+20. git branch --merged   ---> merged branches info
+
+21. git branch --no-merged  ----> non merged branches info
+----------------------------------------------------------------------------------------------------
+Note : we need to change to other branch, without commiting changes after staging, there stash will be helpfull
+
+22. git stash --->it will create snap	
+
+23. git stash list
+
+24. git stash show -p stash@{2} ---> it will show what modifications done on file under stash@{2}
+
+25. git stash apply stash@{2}  ---> if you want to recall stash@{2} to staging
+
+26. git stash clear
+-----------------------------------------------------------------------------------------------------
+27. git reset or git reset mixed --->for undo staging to working  area(unstaging)
+
+    Note:
+	If we want particular commit
+		git reset (commit_id before changes)
+	after this we need to force push this 
+		git push origin (branch name) -f
+      **git restore --staged text.txt --->for unstaging the staged file   
+
+28.git reset --hard ---> reset from both staging and working area
+
+29.git reset --soft  ---> 
+
+	Total we are having 3 stages before local repo:
+
+	working --->  staging ---> local repo
+			temp/ref id-head ---> it will be allotted before we are committing
+
+30. git revert commit_id ---> if we want to revert file back,when file deleted 
+
+31. git diff  ---> diff b/w staging and working dir
+
+32. git diff --head ---> diff b/w local repo and working
+
+33. git diff --cached ---> diff b/w staging and local repo 
+
+34. git restore --staged file_name  ---> unstaging
+
+35. git clone (url of own user after forking) ---> Cloning forked project
+
+36. git remote add upstream (url of forked user project)
+
+note:
+	origin--->personal
+	upstream--->from where i have forked
+
+note: 
+	We will have one pull request for one branch
+	if we want different pull requests, we should have different branches
+
+37. merge all commits in a single commit
+
+38. git pull
+
+39. squash command --->combining commits to one commit
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+* diff b/w git fetch and git pull
+
+git fetch will fetch data from remote repo to local repo
+
+git fetch will fetch data from remote repo to working dir
